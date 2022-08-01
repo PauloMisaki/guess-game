@@ -688,7 +688,6 @@ usual
 louca
 cardo
 nariz
-choça
 mouro
 corte
 ceifa
@@ -743,3 +742,5 @@ monta
 horse
 gatos
 gados
+gotas
+gosma
