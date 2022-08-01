@@ -51,7 +51,7 @@ function App() {
       alert('Essa palavra não existe ou ainda não foi implementada');
     }
 
-    if (currentWord === correctWord) {
+    if (currentWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true, });
       return;
     }
