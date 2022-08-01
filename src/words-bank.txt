@@ -744,3 +744,8 @@ gatos
 gados
 gotas
 gosma
+areia
+facas
+aviao
+fruta
+manta
