@@ -13,18 +13,20 @@ function App() {
   const [currentAttempt, setCurrentAttempt] = useState({ attempt: 0, letterPos: 0, });
   const [wordSet, setWordSet] = useState(new Set());
   const [disabledLetters, setDisabledLetters] = useState([]);
-  const [correctWord, setCorrectWord] = useState('lista');
-  const [gameOver, setGameOver] = useState({ gameOver: false, guessedWord: false, })
+  const [correctWord, setCorrectWord] = useState('');
+  const [gameOver, setGameOver] = useState({ gameOver: false, guessedWord: false, });
+  const [errorVisibility, setErrorVisibility] = useState(false);
 
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
-      //setCorrectWord(words.chosenWord);
+      setCorrectWord(words.chosenWord);
     })
   }, [])
 
   const onSelectLetter = (keyVal) => {
     if (currentAttempt.letterPos > 4) return;
+    setErrorVisibility(false);
     const newBoard = [...board];
     newBoard[currentAttempt.attempt][currentAttempt.letterPos] = keyVal;
     setBoard(newBoard)
@@ -32,6 +34,7 @@ function App() {
   }
   const onDelete = () => {
     if (currentAttempt.letterPos === 0) return;
+    setErrorVisibility(false);
     const newBoard = [...board];
     newBoard[currentAttempt.attempt][currentAttempt.letterPos - 1] = '';
     setBoard(newBoard);
@@ -48,7 +51,15 @@ function App() {
     if (wordSet.has(currentWord.toLowerCase())) {
       setCurrentAttempt({ attempt: currentAttempt.attempt + 1, letterPos: 0 });
     } else {
-      alert('Essa palavra não existe ou ainda não foi implementada');
+      const newBoard = [...board];
+      newBoard[currentAttempt.attempt][0] = '';
+      newBoard[currentAttempt.attempt][1] = '';
+      newBoard[currentAttempt.attempt][2] = '';
+      newBoard[currentAttempt.attempt][3] = '';
+      newBoard[currentAttempt.attempt][4] = '';
+      setBoard(newBoard);
+      setCurrentAttempt({...currentAttempt, letterPos: 0});
+      setErrorVisibility(true);
     }
 
     if (currentWord.toLowerCase() === correctWord) {
@@ -66,6 +77,7 @@ function App() {
       <Header />
     <AppContext.Provider value={{ board, setBoard, currentAttempt, setCurrentAttempt, onSelectLetter, onDelete, onEnter, correctWord, disabledLetters, setDisabledLetters, gameOver, setGameOver }}>
       <div className='game'>
+      {errorVisibility && <h2 className='error-warning'>Essa palavra ainda não foi implementada ou não existe!</h2>}
       <Game />
       {gameOver.gameOver ? <GameOver /> : <Keyboard />}
       </div>
