@@ -13,7 +13,7 @@ function App() {
   const [currentAttempt, setCurrentAttempt] = useState({ attempt: 0, letterPos: 0, });
   const [wordSet, setWordSet] = useState(new Set());
   const [disabledLetters, setDisabledLetters] = useState([]);
-  const [correctWord, setCorrectWord] = useState('matar');
+  const [correctWord, setCorrectWord] = useState('lista');
   const [gameOver, setGameOver] = useState({ gameOver: false, guessedWord: false, })
 
   useEffect(() => {
