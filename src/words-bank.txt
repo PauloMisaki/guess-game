@@ -766,3 +766,6 @@ prato
 calca
 ganyu
 diluc
+viveu
+tenta
+guiar
