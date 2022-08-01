@@ -75,7 +75,7 @@ nav h1 {
 .positionBtn {
   display: flex;
   flex-direction: row;
-  right: 5;
+  right: 0;
   position: absolute;
   top: 10;
 }
