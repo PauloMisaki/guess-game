@@ -68,6 +68,7 @@ nav h1 {
 }
 
 .error-warning {
+  font-family: Helvetica, Arial, sans-serif;
   color: orangered;
 }
 
@@ -145,6 +146,10 @@ nav h1 {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
+}
+
+.gameOver {
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 #big {
