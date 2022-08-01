@@ -67,6 +67,10 @@ nav h1 {
   padding-right: 10px;
 }
 
+.error-warning {
+  color: orangered;
+}
+
 .positionBtn {
   display: flex;
   flex-direction: row;

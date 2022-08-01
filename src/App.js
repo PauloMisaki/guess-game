@@ -77,8 +77,8 @@ function App() {
       <Header />
     <AppContext.Provider value={{ board, setBoard, currentAttempt, setCurrentAttempt, onSelectLetter, onDelete, onEnter, correctWord, disabledLetters, setDisabledLetters, gameOver, setGameOver }}>
       <div className='game'>
-      {errorVisibility && <h2 className='error-warning'>Essa palavra ainda não foi implementada ou não existe!</h2>}
       <Game />
+      {errorVisibility && <h3 className='error-warning'>Essa palavra ainda não foi implementada ou não existe!</h3>}
       {gameOver.gameOver ? <GameOver /> : <Keyboard />}
       </div>
     </AppContext.Provider>
