@@ -60,6 +60,7 @@ function App() {
       setBoard(newBoard);
       setCurrentAttempt({...currentAttempt, letterPos: 0});
       setErrorVisibility(true);
+      return;
     }
 
     if (currentWord.toLowerCase() === correctWord) {
