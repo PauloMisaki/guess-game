@@ -240,6 +240,7 @@ amala
 abara
 acaju
 anato
+vasco
 areio
 aguia
 arras
@@ -2867,7 +2868,7 @@ lucas
 legar
 laica
 lixar
-lundu
+lunna
 lhano
 lauto
 loica
@@ -6443,3 +6444,4 @@ vazos
 vazou
 vigas
 turfa
+pague
